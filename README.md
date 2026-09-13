@@ -27,17 +27,19 @@
 ---
 
 ## 🎯 Problem Statement
-Predicting outcomes based on historical data is at the heart of Machine Learning.
+Predicting outcomes based on historical data is at the heart of Machine Learning. This project tackles the legendary **Titanic Survival Prediction** challenge.
 
 > **Task (T):** Classify whether a passenger survived `(1)` or did not survive `(0)`.  
-> **Experience (E):** Historical Titanic passenger records with known outcomes.  
-> **Performance (P):** Model accuracy (the percentage of passengers correctly classified).  
+> **Experience (E):** Historical Titanic passenger records with known outcomes (including features like Age, Sex, Ticket Class, etc.).  
+> **Performance (P):** Model accuracy (the percentage of passengers correctly classified) and F1-Score.  
+
+**Dataset Source:** [Kaggle Titanic Data](https://www.kaggle.com/c/titanic/data)  
 
 ---
 
 ## 📚 Included Notebooks
-- **[`ML_Pipeline.ipynb`](./ML_Pipeline.ipynb)**: The core end-to-end Titanic survival prediction pipeline.
-- **[`Numpy_Pandas.ipynb`](./Numpy_Pandas.ipynb)**: A primer on data manipulation basics using NumPy and Pandas.
+- **[`ML_Pipeline.ipynb`](./ML_Pipeline.ipynb)**: The core end-to-end Titanic survival prediction pipeline. Includes data loading, EDA, feature engineering, model training (Decision Tree), and evaluation.
+- **[`Numpy_Pandas.ipynb`](./Numpy_Pandas.ipynb)**: A comprehensive primer on data manipulation basics. Covers array operations with **NumPy** and DataFrame manipulation, cleaning, and aggregation with **Pandas**.
 
 ---
 
@@ -98,10 +100,12 @@ cd Machine-Learning-Pipline
 pip install pandas numpy matplotlib seaborn scikit-learn jupyter
 ```
 
-### 3️⃣ Run the Notebook
+### 3️⃣ Run the Notebooks
+Launch Jupyter Notebook to explore the code interactively:
 ```bash
-jupyter notebook ML_Pipeline.ipynb
+jupyter notebook
 ```
+*Then, open either `ML_Pipeline.ipynb` or `Numpy_Pandas.ipynb` from the browser interface.*
 
 ---
 
@@ -137,6 +141,14 @@ Our final model yields solid results across standard classification metrics:
 | **Accuracy Score** | Overall correctness | Gives a quick glance at model performance. |
 | **Confusion Matrix** | True/False Positives & Negatives | Shows exactly *where* the model is making mistakes. |
 | **F1-Score** | Balance of Precision & Recall | Crucial for imbalanced datasets. |
+
+---
+
+## 🚀 Future Enhancements
+We are always looking to improve the pipeline! Some planned updates include:
+- **Advanced Models:** Implementing Random Forest, XGBoost, and Support Vector Machines (SVM).
+- **Hyperparameter Tuning:** Utilizing `GridSearchCV` or `RandomizedSearchCV` to optimize model parameters.
+- **Feature Engineering:** Extracting new features like "Family Size" or "Titles" from passenger names to boost accuracy.
 
 ---
 
