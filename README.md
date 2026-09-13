@@ -18,6 +18,7 @@
 
 ## 📑 Table of Contents
 - [🎯 Problem Statement](#-problem-statement)
+- [📚 Included Notebooks](#-included-notebooks)
 - [🛠️ Pipeline Architecture](#-pipeline-architecture)
 - [🚀 Getting Started](#-getting-started)
 - [📊 Results & Evaluation](#-results--evaluation)
@@ -31,6 +32,12 @@ Predicting outcomes based on historical data is at the heart of Machine Learning
 > **Task (T):** Classify whether a passenger survived `(1)` or did not survive `(0)`.  
 > **Experience (E):** Historical Titanic passenger records with known outcomes.  
 > **Performance (P):** Model accuracy (the percentage of passengers correctly classified).  
+
+---
+
+## 📚 Included Notebooks
+- **[`ML_Pipeline.ipynb`](./ML_Pipeline.ipynb)**: The core end-to-end Titanic survival prediction pipeline.
+- **[`Numpy_Pandas.ipynb`](./Numpy_Pandas.ipynb)**: A primer on data manipulation basics using NumPy and Pandas.
 
 ---
 
