@@ -1,6 +1,6 @@
 <div align="center">
   
-# 🚢 End-to-End Machine Learning Pipeline
+# 🚢 ML Fundamentals & Pipeline
 ### *Titanic Survival Prediction Model*
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/downloads/)
@@ -90,8 +90,8 @@ Want to run this on your own machine? Follow these interactive steps:
 
 ### 1️⃣ Clone the Repo
 ```bash
-git clone https://github.com/vaibhav-jais06/Machine-Learning-Pipline.git
-cd Machine-Learning-Pipline
+git clone https://github.com/vaibhav-jais06/ML-Fundamentals-and-Pipeline.git
+cd ML-Fundamentals-and-Pipeline
 ```
 
 ### 2️⃣ Install Dependencies
@@ -154,7 +154,7 @@ We are always looking to improve the pipeline! Some planned updates include:
 
 <div align="center">
   <b>Contributions, issues, and feature requests are welcome!</b> <br>
-  Feel free to check the <a href="https://github.com/vaibhav-jais06/Machine-Learning-Pipline/issues">issues page</a>.
+  Feel free to check the <a href="https://github.com/vaibhav-jais06/ML-Fundamentals-and-Pipeline/issues">issues page</a>.
   
   <br><br>
   
