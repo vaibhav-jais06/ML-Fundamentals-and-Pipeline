@@ -41,6 +41,7 @@ This repository is split into two modular notebooks designed for progressive lea
 | :--- | :--- | :--- |
 | 📓 **[`Numpy_Pandas.ipynb`](./Numpy_Pandas.ipynb)** | **The Fundamentals.** A comprehensive primer on data manipulation basics. | • Array operations (NumPy)<br>• DataFrames (Pandas)<br>• Data Cleaning & Aggregation |
 | 🚢 **[`ML_Pipeline.ipynb`](./ML_Pipeline.ipynb)** | **The ML Pipeline.** The core end-to-end Titanic survival prediction model. | • Exploratory Data Analysis (EDA)<br>• Feature Engineering<br>• Model Training (Decision Tree)<br>• Evaluation Metrics |
+| 🤖 **[`Week_3_ML_I_Sunday_.ipynb`](./Week_3_ML_I_Sunday_.ipynb)** | **Advanced ML Models.** Deep dive into additional supervised and unsupervised ML models. | • Decision Tree Model<br>• Logistic Regression Model<br>• Unsupervised Machine Learning |
 
 ---
 
