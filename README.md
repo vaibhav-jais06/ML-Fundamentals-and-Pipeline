@@ -3,7 +3,7 @@
   
   # 🚢 ML Fundamentals & Pipeline
   
-  **A Comprehensive Guide to Data Manipulation, Supervised & Unsupervised Learning, Ensemble Boosting, and Model Evaluation Diagnostics**
+  **A Comprehensive Guide to Data Manipulation, Supervised & Unsupervised Learning, Regularization & Shrinkage, Ensemble Boosting, and Model Evaluation Diagnostics**
 
   <p align="center">
     <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8+-3776AB.svg?style=flat-square&logo=python&logoColor=white" alt="Python" /></a>
@@ -14,9 +14,9 @@
     <a href="https://jupyter.org/"><img src="https://img.shields.io/badge/Jupyter-Notebook-F37626.svg?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter" /></a>
   </p>
 
-  *From foundational mathematical array operations to building end-to-end classification pipelines, state-of-the-art boosting ensemble models, and rigorous cross-validation diagnostics.*
+  *From foundational mathematical array operations to building end-to-end classification pipelines, penalizing complexity with Ridge/Lasso/ElasticNet, state-of-the-art boosting ensemble models, and rigorous cross-validation diagnostics.*
 
-  [**Core Notebooks**](#-core-notebooks) • [**Model Evaluation**](#-model-evaluation--diagnostics-spotlight) • [**Ensemble & Boosting**](#-ensemble-learning--boosting-spotlight) • [**Pipeline Lifecycle**](#-pipeline-architecture) • [**Quickstart**](#-getting-started) • [**Results**](#-results--evaluation)
+  [**Core Notebooks**](#-core-notebooks) • [**Regularization & Shrinkage**](#-regularization--shrinkage-spotlight) • [**Model Evaluation**](#-model-evaluation--diagnostics-spotlight) • [**Ensemble & Boosting**](#-ensemble-learning--boosting-spotlight) • [**Pipeline Lifecycle**](#-pipeline-architecture) • [**Quickstart**](#-getting-started) • [**Results**](#-results--evaluation)
 
 </div>
 
@@ -24,13 +24,14 @@
 
 ## 🌟 About The Project
 
-Predicting outcomes and extracting meaningful patterns from data is at the core of Applied Machine Learning. This repository delivers a structured, progressive pathway through the ML lifecycle across five distinct pillars:
+Predicting outcomes and extracting meaningful patterns from data is at the core of Applied Machine Learning. This repository delivers a structured, progressive pathway through the ML lifecycle across six distinct pillars:
 
 1. **Foundations of Data Engineering:** Vectorized operations, multidimensional indexing, DataFrame wrangling, and missing data imputation using **NumPy** and **Pandas**.
 2. **End-to-End Supervised Pipeline:** Building a production-style classification workflow on the iconic **Titanic Survival Prediction** dataset.
 3. **Supervised & Unsupervised Modeling:** Comparing parametric models (**Logistic Regression**) with non-parametric trees (**Decision Trees**), alongside unsupervised clustering (**K-Means**).
-4. **Ensemble Methods & Boosting:** Deep-dive into sequential learning algorithms, comparing **Decision Stumps (Weak Learners)**, **AdaBoost**, and **Gradient Boosting**, complete with decision boundary plots and stage-wise error curves.
-5. **Model Evaluation & Validation Diagnostics:** Rigorous evaluation methodologies using the **Wisconsin Breast Cancer** diagnostic dataset, contrasting naive baselines (`DummyClassifier`) against standard pipelines (`StandardScaler` + `LogisticRegression`, `DecisionTreeClassifier`, `RandomForestClassifier`), confusion matrices, classification reports, and 5-Fold `StratifiedKFold` cross-validation.
+4. **Regularization & Shrinkage Methods:** Mitigating overfitting, taming multicollinearity, and driving automated feature selection via **L2 (Ridge)**, **L1 (Lasso)**, and hybrid **ElasticNet** penalties.
+5. **Ensemble Methods & Boosting:** Deep-dive into sequential learning algorithms, comparing **Decision Stumps (Weak Learners)**, **AdaBoost**, and **Gradient Boosting**, complete with decision boundary plots and stage-wise error curves.
+6. **Model Evaluation & Validation Diagnostics:** Rigorous evaluation methodologies using the **Wisconsin Breast Cancer** diagnostic dataset, contrasting naive baselines (`DummyClassifier`) against standard pipelines (`StandardScaler` + `LogisticRegression`, `DecisionTreeClassifier`, `RandomForestClassifier`), confusion matrices, classification reports, and 5-Fold `StratifiedKFold` cross-validation.
 
 ```
                     ┌───────────────────────────────┐
@@ -47,14 +48,21 @@ Predicting outcomes and extracting meaningful patterns from data is at the core 
     ┌───────────────────────────────┼───────────────────────────────┐
     ▼                               ▼                               ▼
 ┌───────────────────────┐   ┌───────────────────────┐   ┌───────────────────────┐
-│ Supervised / Unsuper. │   │ Ensemble Boosting     │   │ Model Evaluation & CV │
-│ (LogReg, Trees,       │   │ (AdaBoost, GradBoost, │   │ (Dummy Baseline, PR/  │
-│  K-Means Clustering)  │   │  Staged Loss Curves)  │   │  ROC, Stratified CV)  │
-└───────────────────────┘   └───────────────────────┘   └───────────────────────┘
+│ Supervised / Unsuper. │   │ Regularization & L1/L2│   │ Ensemble Boosting     │
+│ (LogReg, Trees,       │   │ (Ridge, Lasso Sparsity│   │ (AdaBoost, GradBoost, │
+│  K-Means Clustering)  │   │  ElasticNet Hybrid)   │   │  Staged Loss Curves)  │
+└───────────────────────┘   └───────────┬───────────┘   └───────────────────────┘
+                                        │
+                                        ▼
+                    ┌───────────────────────────────────────┐
+                    │     Model Evaluation & Diagnostics    │
+                    │  (Dummy Baseline, PR/ROC, K-Fold CV)  │
+                    └───────────────────────────────────────┘
 ```
 
 > **Formal Problem Formulations:**  
 > • **Titanic Survival Task:** Classify passenger survival binary state: `1` (Survived) or `0` (Did not survive) from passenger demographics, ticketing metadata, and cabin records ([Kaggle Titanic Dataset](https://www.kaggle.com/c/titanic/data)).  
+> • **Controlled Regression & Sparsity Task:** Predict a continuous target from 10 features (5 informative signals, 5 noise features) under Gaussian perturbation to benchmark coefficient shrinkage and automated feature elimination.  
 > • **Wisconsin Diagnostic Task:** Classify cellular biopsy nuclei as `1` (Benign) or `0` (Malignant) across 30 quantitative morphological features ([Wisconsin Breast Cancer Dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html)).
 
 ---
@@ -68,8 +76,97 @@ Each notebook in this repository is self-contained, heavily commented, and desig
 | 📓 **[`Numpy_Pandas.ipynb`](./Numpy_Pandas.ipynb)** | **Data Foundations** | • Multi-dimensional arrays & broadcasting<br>• DataFrame filtering, grouping & aggregation<br>• Handling null values & data type transformations |
 | 🚢 **[`ML_Pipeline.ipynb`](./ML_Pipeline.ipynb)** | **End-to-End Pipeline** | • Exploratory Data Analysis (EDA) with Seaborn<br>• Feature engineering & categorical encoding<br>• `DecisionTreeClassifier` training & evaluation<br>• Confusion Matrix & Classification Report |
 | 🤖 **[`Week_3_ML_I_Sunday_.ipynb`](./Week_3_ML_I_Sunday_.ipynb)** | **Supervised & Unsupervised Models** | • `LogisticRegression` hyperparameter tuning<br>• `DecisionTreeClassifier` depth pruning<br>• `KMeans` clustering on synthetic 2D datasets<br>• Visualizing decision boundaries and cluster centroids |
+| 🎯 **[`Regularization.ipynb`](./Regularization.ipynb)** | **Regularization & Feature Selection** | • **OLS Baseline:** Unregularized regression benchmarking<br>• **Ridge (L2):** Smooth weight shrinkage & collinearity control<br>• **Lasso (L1):** Sparse modeling & automated feature elimination<br>• **ElasticNet (L1 + L2):** Convex combination balancing sparsity & grouping<br>• Hyperparameter sensitivity sweeps ($\alpha$ & `l1_ratio`)<br>• Coefficient comparative profiling & bar chart visualizations |
 | ⚡ **[`Boosting.ipynb`](./Boosting.ipynb)** | **Ensemble Learning & Boosting** | • **Weak Learners:** Training single-split Decision Stumps<br>• **AdaBoost:** Iterative sample re-weighting & decision boundary<br>• **Gradient Boosting:** Residual fitting & learning rate tuning<br>• Stage-wise accuracy curves (`staged_score`)<br>• Feature importance analysis across models |
 | 🧪 **[`Model_Evalution.ipynb`](./Model_Evalution.ipynb)** | **Model Evaluation & Cross-Validation** | • Baseline benchmarking (`DummyClassifier`)<br>• Full metric suite: Precision, Recall, F1, Accuracy<br>• Scaled `Pipeline` with `StandardScaler` & `LogisticRegression`<br>• Confusion Matrix visualization (`ConfusionMatrixDisplay`)<br>• Multi-model comparison (LogReg, Decision Tree, Random Forest)<br>• 5-Fold `StratifiedKFold` Cross-Validation |
+
+---
+
+## 🎯 Regularization & Shrinkage Spotlight
+
+The **[`Regularization.ipynb`](./Regularization.ipynb)** notebook provides an in-depth, hands-on masterclass on preventing overfitting, penalizing complexity, handling multicollinearity, and performing automated feature selection using **L2 Ridge**, **L1 Lasso**, and hybrid **ElasticNet** models.
+
+```
+[Ordinary Least Squares] ──► [Ridge (L2 Penalty)] ──► [Lasso (L1 Sparsity)] ──► [ElasticNet (Hybrid)]
+   (OLS MSE: ~325.12)           (Smooth Shrinkage)       (7 Features Zeroed out)     (Combined L1 + L2)
+```
+
+<details>
+<summary><b>🔍 Expand to View the 13-Part Curriculum in Regularization.ipynb</b></summary>
+<br>
+
+1. **Part 1: Import Regression & Regularization Libraries** — NumPy, Pandas, Matplotlib, `LinearRegression`, `Ridge`, `Lasso`, `ElasticNet`, and evaluation metrics (`mean_squared_error`, `r2_score`).
+2. **Part 2: Controlled Synthetic Dataset Generation** — Creating a reproducible regression dataset via `make_regression(n_samples=200, n_features=10, n_informative=5, noise=20, random_state=42)`.
+3. **Part 3: Semantic Feature Assignment** — Mapping realistic domain attributes: `Area`, `Bedrooms`, `Age`, `Location`, `Parking`, `Garden`, `Floor`, `Distance`, `School`, `Transport`.
+4. **Part 4: Train / Test Partitioning** — Splitting into 160 training and 40 testing samples (80/20 partition, `random_state=42`).
+5. **Part 5: Ordinary Least Squares (OLS) Baseline** — Fitting standard `LinearRegression` with unconstrained parameter optimization.
+6. **Part 6: OLS Evaluation & Metric Logging** — Measuring baseline performance (MSE: 325.12, $R^2$: 0.949) and extracting unpenalized weight coefficients.
+7. **Part 7: Ridge Regression (L2 Regularization)** — Training `Ridge(alpha=50)` with quadratic weight penalty to shrink coefficients smoothly.
+8. **Part 8: Lasso Regression (L1 Regularization)** — Fitting `Lasso(alpha=10)` with absolute-value penalty to drive uninformative weights to exact zero.
+9. **Part 9: Sparsity & Zero-Coefficient Detection** — Quantifying feature elimination: verifying that 7 out of 10 coefficients are driven to exact `0.000`.
+10. **Part 10: ElasticNet Regularization (L1 + L2 Hybrid)** — Balancing L1 sparsity and L2 grouping with `ElasticNet(alpha=10, l1_ratio=0.5)`.
+11. **Part 11: Multi-Model Benchmark & Tabular Comparison** — Consolidating MSE, $R^2$, and coefficient profiles into structured comparative DataFrames.
+12. **Part 12: Visualizing Weight Profiles** — High-resolution comparative bar chart comparing feature coefficients across all four regression paradigms.
+13. **Part 13: Hyperparameter Sweeps & Sensitivity** — Analyzing the impact of $\alpha$ on Lasso sparsity and `l1_ratio` on ElasticNet feature retention.
+
+</details>
+
+### Mathematical Formulations
+
+Regularization injects a penalty term $\Omega(w)$ into the Ordinary Least Squares objective to control weight magnitude:
+
+$$\mathcal{L}_{\text{OLS}}(w) = \frac{1}{2n}\sum_{i=1}^n \left(y_i - \hat{y}_i\right)^2$$
+
+* **Ridge Regression ($L_2$ Penalty):** Minimizes residual sum of squares plus the squared Euclidean norm of coefficients:
+  $$\mathcal{L}_{\text{Ridge}}(w) = \mathcal{L}_{\text{OLS}}(w) + \alpha \sum_{j=1}^p w_j^2$$
+* **Lasso Regression ($L_1$ Penalty):** Minimizes residual sum of squares plus the Manhattan ($L_1$) norm, inducing sharp geometric corners that force non-informative coefficients to exactly zero:
+  $$\mathcal{L}_{\text{Lasso}}(w) = \mathcal{L}_{\text{OLS}}(w) + \alpha \sum_{j=1}^p |w_j|$$
+* **ElasticNet ($L_1 + L_2$ Hybrid):** Convex combination parameterized by mixing ratio $\rho \in [0, 1]$ (`l1_ratio`):
+  $$\mathcal{L}_{\text{ElasticNet}}(w) = \mathcal{L}_{\text{OLS}}(w) + \alpha \left[ \rho \sum_{j=1}^p |w_j| + \frac{1-\rho}{2} \sum_{j=1}^p w_j^2 \right]$$
+
+### Quantitative Performance Benchmark
+
+#### 🎯 Test Set Metrics (40 Samples / 20% Hold-out):
+| Model | Penalty Type | Hyperparameters | Test MSE | Test $R^2$ Score | Zero Coefficients | Feature Selection Status |
+| :--- | :---: | :---: | :---: | :---: | :---: | :--- |
+| 📉 **Linear Regression** | None (OLS) | Unregularized | **325.12** | **0.949** | 0 / 10 (0%) | Retains all features; susceptible to noise |
+| 🛡️ **Ridge Regression** | $L_2$ Penalty | $\alpha = 50.0$ | 866.39 | 0.863 | 0 / 10 (0%) | Smooth shrinkage; shrinks weights towards 0 without setting to 0 |
+| ✂️ **Lasso Regression** | $L_1$ Penalty | $\alpha = 10.0$ | 761.83 | 0.880 | **7 / 10 (70%)** | **Automated Selection:** Retains only dominant signals (`Location`, `Distance`, `Garden`) |
+| ⚖️ **ElasticNet** | $L_1 + L_2$ Hybrid | $\alpha = 10.0, \rho = 0.5$ | 4973.97 | 0.215 | 3 / 10 (30%) | Balances feature grouping with selective sparsity |
+
+#### 📊 Feature Coefficient Comparison:
+| Feature | Linear Regression | Ridge ($\alpha=50$) | Lasso ($\alpha=10$) | ElasticNet ($\alpha=10, \rho=0.5$) | Feature Status in Lasso |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **`Location`** | 79.956 | 59.982 | **70.505** | 12.212 | 🌟 **Retained** (Dominant signal) |
+| **`Distance`** | 40.753 | 30.495 | **29.188** | 5.646 | 🌟 **Retained** (True informative) |
+| **`Garden`** | 36.273 | 29.524 | **28.814** | 6.834 | 🌟 **Retained** (True informative) |
+| **`Floor`** | 8.599 | 7.579 | **0.000** | 1.651 | ✂️ **Pruned to Zero** |
+| **`Age`** | 7.122 | 3.333 | **0.000** | 0.000 | ✂️ **Pruned to Zero** |
+| **`Area`** | 1.518 | 2.568 | **0.000** | 0.372 | ✂️ **Pruned to Zero** |
+| **`School`** | 1.208 | 1.263 | **0.000** | 0.000 | ✂️ **Pruned to Zero** |
+| **`Parking`** | 1.093 | -0.190 | **0.000** | 0.000 | ✂️ **Pruned to Zero** |
+| **`Transport`** | -1.104 | -1.868 | **0.000** | -0.422 | ✂️ **Pruned to Zero** |
+| **`Bedrooms`** | -1.805 | -3.003 | **0.000** | -0.771 | ✂️ **Pruned to Zero** |
+
+#### 🎛️ Hyperparameter Sensitivity Sweeps:
+
+* **Effect of Alpha ($\alpha$) on Lasso Sparsity:**
+  | Regularization Strength ($\alpha$) | Zero Coefficients | Active Features | Sparsity Ratio | Modeling Impact |
+  | :---: | :---: | :---: | :---: | :--- |
+  | `0.01` | 0 / 10 | 10 / 10 | 0% | Near-OLS behavior; negligible penalty |
+  | `0.10` | 0 / 10 | 10 / 10 | 0% | Mild shrinkage across coefficients |
+  | `1.00` | 1 / 10 | 9 / 10 | 10% | Begins pruning weakest collinear feature |
+  | `10.00` | **7 / 10** | **3 / 10** | **70%** | **Optimal selective sparsity:** Retains only genuine informative features |
+  | `100.00` | 10 / 10 | 0 / 10 | 100% | Severe over-regularization; predicts global mean |
+
+* **Effect of L1 Ratio ($\rho$) on ElasticNet Sparsity ($\alpha=10$):**
+  | L1 Ratio ($\rho$) | Zero Coefficients | Active Features | Sparsity Character |
+  | :---: | :---: | :---: | :--- |
+  | `0.10` | 0 / 10 | 10 / 10 | Dominantly Ridge-like (all weights non-zero) |
+  | `0.30` | 2 / 10 | 8 / 10 | Light sparsity with strong weight shrinkage |
+  | `0.50` | 3 / 10 | 7 / 10 | Balanced combination of L1 and L2 penalties |
+  | `0.70` | 5 / 10 | 5 / 10 | Moderate sparsity favoring L1 feature selection |
+  | `0.90` | 6 / 10 | 4 / 10 | Strongly Lasso-like with sparse selection |
 
 ---
 
@@ -180,9 +277,13 @@ Transform raw data into model-ready tensors:
 
 <details>
 <summary><b>🤖 4. Model Training & Ensemble Construction</b></summary>
-Train baseline models and advanced ensembles:
+Train baseline models, regularized regressions, and advanced ensembles:
 <ul>
   <li><code>DummyClassifier</code> for minimal empirical performance threshold</li>
+  <li><code>LinearRegression</code> unpenalized OLS baseline</li>
+  <li><code>Ridge</code> (L2 penalty) for continuous weight shrinkage and collinearity stabilization</li>
+  <li><code>Lasso</code> (L1 penalty) for automatic feature elimination and sparse modeling</li>
+  <li><code>ElasticNet</code> (hybrid L1 + L2) for balanced shrinkage and feature grouping</li>
   <li><code>DecisionTreeClassifier</code> with controlled <code>max_depth</code></li>
   <li><code>LogisticRegression</code> with convergence optimization and feature scaling</li>
   <li><code>RandomForestClassifier</code> for bagging variance reduction</li>
@@ -193,7 +294,7 @@ Train baseline models and advanced ensembles:
 
 <details>
 <summary><b>📈 5. Model Evaluation & Diagnostics</b></summary>
-Validate models with rigorous metrics: Confusion Matrices, Accuracy, Precision, Recall, F1-Score, 5-Fold Stratified Cross-Validation, and stage-wise error curves.
+Validate models with rigorous metrics: Confusion Matrices, Accuracy, Precision, Recall, F1-Score, MSE, $R^2$ Score, Sparsity counts, 5-Fold Stratified Cross-Validation, and stage-wise error curves.
 </details>
 
 ---
@@ -217,7 +318,27 @@ print(f"Accuracy: {accuracy_score(y_test, y_pred) * 100:.2f}%\n")
 print(classification_report(y_test, y_pred))
 ```
 
-### 2. Boosting Ensembles (AdaBoost & Gradient Boosting)
+### 2. Regularization & Feature Selection (Ridge, Lasso, ElasticNet)
+```python
+from sklearn.linear_model import LinearRegression, Ridge, Lasso, ElasticNet
+from sklearn.metrics import mean_squared_error, r2_score
+
+# 1. Unregularized OLS Baseline
+ols = LinearRegression().fit(X_train, y_train)
+
+# 2. Ridge Regression (L2 penalty: smooth shrinkage)
+ridge = Ridge(alpha=50.0).fit(X_train, y_train)
+
+# 3. Lasso Regression (L1 penalty: automatic feature selection)
+lasso = Lasso(alpha=10.0).fit(X_train, y_train)
+eliminated = (lasso.coef_ == 0).sum()
+print(f"Lasso eliminated {eliminated} / {len(lasso.coef_)} features to exactly 0.0")
+
+# 4. ElasticNet (Convex combination of L1 and L2 penalties)
+elastic = ElasticNet(alpha=10.0, l1_ratio=0.5).fit(X_train, y_train)
+```
+
+### 3. Boosting Ensembles (AdaBoost & Gradient Boosting)
 ```python
 from sklearn.ensemble import AdaBoostClassifier, GradientBoostingClassifier
 from sklearn.tree import DecisionTreeClassifier
@@ -237,7 +358,7 @@ print(f"AdaBoost Accuracy: {adaboost.score(X_test, y_test) * 100:.2f}%")
 print(f"Gradient Boosting Accuracy: {grad_boost.score(X_test, y_test) * 100:.2f}%")
 ```
 
-### 3. Scaled Pipeline & Stratified K-Fold Cross-Validation
+### 4. Scaled Pipeline & Stratified K-Fold Cross-Validation
 ```python
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
@@ -275,6 +396,9 @@ A summary of diagnostic metrics utilized across our models:
 | **🔄 Cross-Validation (CV)** | Generalization stability | Evaluates variance across k folds to guard against train-test split bias. |
 | **📉 Staged Accuracy** | Convergence tracking | Evaluates test accuracy iteration-by-iteration to detect the onset of overfitting. |
 | **🌲 Feature Importance** | Interpretability | Quantifies each feature's contribution to reducing Gini impurity or variance. |
+| **📐 Mean Squared Error (MSE)** | Residual variance | Quantifies continuous prediction error penalties in regression models. |
+| **📈 $R^2$ Score (Goodness-of-Fit)** | Variance explained | Proportion of target variance accounted for by features. |
+| **✂️ Sparsity (Zero Coefficients)** | Feature pruning | Quantifies structural weight elimination via $L_1$ penalty. |
 
 ---
 
@@ -301,14 +425,14 @@ source venv/bin/activate
 
 ### 3️⃣ Install Dependencies
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
+pip install -r requirements.txt
 ```
 
 ### 4️⃣ Launch Jupyter Notebook
 ```bash
 jupyter notebook
 ```
-Navigate to any of the notebooks (`Numpy_Pandas.ipynb`, `ML_Pipeline.ipynb`, `Week_3_ML_I_Sunday_.ipynb`, `Boosting.ipynb`, or `Model_Evalution.ipynb`) to run the interactive cells.
+Navigate to any of the notebooks (`Numpy_Pandas.ipynb`, `ML_Pipeline.ipynb`, `Week_3_ML_I_Sunday_.ipynb`, `Regularization.ipynb`, `Boosting.ipynb`, or `Model_Evalution.ipynb`) to run the interactive cells.
 
 ---
 
@@ -317,10 +441,12 @@ Navigate to any of the notebooks (`Numpy_Pandas.ipynb`, `ML_Pipeline.ipynb`, `We
 ```
 ML-Fundamentals-and-Pipeline/
 ├── .gitignore                    # Git ignore configurations (checkpoints, envs)
-├── README.md                     # Project documentation & guides
+├── requirements.txt              # Pinned core project dependencies
+├── README.md                     # Comprehensive project documentation & guides
 ├── Numpy_Pandas.ipynb            # NumPy & Pandas fundamentals
 ├── ML_Pipeline.ipynb             # Titanic survival end-to-end pipeline
 ├── Week_3_ML_I_Sunday_.ipynb     # Supervised (Trees, LogReg) & Unsupervised (K-Means)
+├── Regularization.ipynb          # Ridge (L2), Lasso (L1 feature selection), ElasticNet
 ├── Boosting.ipynb                # Ensemble learning: AdaBoost & Gradient Boosting
 └── Model_Evalution.ipynb         # Model evaluation, diagnostics & Stratified K-Fold CV
 ```
@@ -332,6 +458,7 @@ ML-Fundamentals-and-Pipeline/
 - [x] **Core Foundations:** Vectorized NumPy & Pandas data wrangling workflows.
 - [x] **End-to-End Pipeline:** Titanic classification with EDA, imputation, and evaluation.
 - [x] **Unsupervised Learning:** K-Means clustering and centroid analysis.
+- [x] **Regularization & Shrinkage:** Ridge (L2), Lasso (L1 automated feature elimination), and ElasticNet with alpha tuning and coefficient profiling.
 - [x] **Ensemble Boosting:** AdaBoost and Gradient Boosting with staged scoring and boundary visuals.
 - [x] **Model Evaluation & Diagnostics:** Stratified K-Fold CV, DummyClassifier baseline, confusion matrices, and multi-model benchmarking.
 - [ ] **Advanced Ensemble Models:** Implement XGBoost, LightGBM, and CatBoost pipelines.
