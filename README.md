@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://img.shields.io/badge/Machine%20Learning-Pipeline-8A2BE2?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="ML Pipeline Badge" />
+  <img src="https://img.shields.io/badge/Machine%20Learning-3D%20Pipeline-8A2BE2?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="ML Pipeline Badge" />
   
-  # 🚢 ML Fundamentals & End-to-End Pipeline
+  # 🌐 ML Fundamentals & 3D Interactive Pipeline
 
-  **A Masterclass in Applied Machine Learning: Exploratory Data Engineering, Supervised Classification, Regularization & Sparsity, Ensemble Boosting, Cross-Validation Diagnostics, and Unsupervised Customer Segmentation**
+  **A Masterclass in Applied Machine Learning: Exploratory Data Engineering, Supervised Classification, Regularization & Sparsity, Ensemble Boosting, Cross-Validation Diagnostics, and 3D Interactive Customer Segmentation**
 
   <p align="center">
     <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.8+-3776AB.svg?style=flat-square&logo=python&logoColor=white" alt="Python" /></a>
@@ -12,17 +12,91 @@
     <a href="https://numpy.org/"><img src="https://img.shields.io/badge/NumPy-Array_Computing-013243.svg?style=flat-square&logo=numpy&logoColor=white" alt="NumPy" /></a>
     <a href="https://matplotlib.org/"><img src="https://img.shields.io/badge/Matplotlib-Visualization-11557c.svg?style=flat-square" alt="Matplotlib" /></a>
     <a href="https://seaborn.pydata.org/"><img src="https://img.shields.io/badge/Seaborn-Statistical_Plots-4C72B0.svg?style=flat-square" alt="Seaborn" /></a>
-    <a href="https://plotly.com/"><img src="https://img.shields.io/badge/Plotly-Interactive_Visuals-3F4F75.svg?style=flat-square&logo=plotly&logoColor=white" alt="Plotly" /></a>
+    <a href="https://plotly.com/"><img src="https://img.shields.io/badge/Plotly-3D_Interactive-3F4F75.svg?style=flat-square&logo=plotly&logoColor=white" alt="Plotly" /></a>
     <a href="https://jupyter.org/"><img src="https://img.shields.io/badge/Jupyter-Notebook-F37626.svg?style=flat-square&logo=jupyter&logoColor=white" alt="Jupyter" /></a>
     <img src="https://img.shields.io/badge/PRs-Welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome" />
     <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License" />
   </p>
 
-  *From foundational tensor indexing and feature wrangling to production-style classification pipelines, complexity penalties with Ridge/Lasso/ElasticNet, state-of-the-art ensemble boosting, leak-free stratified cross-validation, and unsupervised customer segmentation via K-Means and DBSCAN.*
+  <p align="center">
+    <a href="https://htmlpreview.github.io/?https://github.com/vaibhav-jais06/ML-Fundamentals-and-Pipeline/blob/main/assets/interactive_3d_clusters.html"><img src="https://img.shields.io/badge/🎮_Launch-3D_Interactive_Visualizer-8A2BE2?style=for-the-badge&logo=plotly&logoColor=white" alt="Launch 3D Visualizer" /></a>
+    <a href="https://colab.research.google.com/github/vaibhav-jais06/ML-Fundamentals-and-Pipeline/blob/main/KMeans_Cluster_Analysis.ipynb"><img src="https://img.shields.io/badge/Colab-Run_In_Browser-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Run In Colab" /></a>
+  </p>
 
-  [**Core Notebooks**](#-core-notebooks) • [**Customer Segmentation**](#-unsupervised-customer-segmentation-spotlight) • [**Regularization & Shrinkage**](#-regularization--shrinkage-spotlight) • [**Model Evaluation**](#-model-evaluation--diagnostics-spotlight) • [**Ensemble & Boosting**](#-ensemble-learning--boosting-spotlight) • [**Pipeline Architecture**](#-pipeline-architecture) • [**Code Sneak Peek**](#-code-sneak-peek) • [**Quickstart**](#-getting-started)
+  *From foundational tensor indexing and feature wrangling to production-style classification pipelines, complexity penalties with Ridge/Lasso/ElasticNet, state-of-the-art ensemble boosting, leak-free stratified cross-validation, and 3D unsupervised customer segmentation via K-Means and DBSCAN.*
+
+  [**3D Visualizer**](#-3d-interactive-manifold--cluster-diagnostics) • [**Core Notebooks**](#-core-notebooks) • [**Customer Segmentation**](#-unsupervised-customer-segmentation-spotlight) • [**Regularization & Shrinkage**](#-regularization--shrinkage-spotlight) • [**Model Evaluation**](#-model-evaluation--diagnostics-spotlight) • [**Ensemble & Boosting**](#-ensemble-learning--boosting-spotlight) • [**Architecture**](#-3d-pipeline-architecture) • [**Code Sneak Peek**](#-code-sneak-peek) • [**Quickstart**](#-getting-started)
 
 </div>
+
+---
+
+## 🏗️ 3D Pipeline Architecture
+
+<p align="center">
+  <img src="./assets/pipeline_3d_architecture.svg" alt="3D Architecture Pipeline Topology" width="100%" />
+</p>
+
+```mermaid
+flowchart TD
+    classDef base fill:#312e81,stroke:#818cf8,stroke-width:2px,color:#fff;
+    classDef supervised fill:#78350f,stroke:#fbbf24,stroke-width:2px,color:#fff;
+    classDef regular fill:#064e3b,stroke:#34d399,stroke-width:2px,color:#fff;
+    classDef ensemble fill:#164e63,stroke:#22d3ee,stroke-width:2px,color:#fff;
+    classDef cv fill:#1e3a8a,stroke:#60a5fa,stroke-width:2px,color:#fff;
+    classDef clustering fill:#701a75,stroke:#f472b6,stroke-width:2px,color:#fff;
+
+    P1["📦 Pillar 1: Tensor & Array Foundations<br/>(NumPy Vectorization & Pandas Wrangling)"]:::base
+    P2["🚢 Pillar 2: End-to-End Supervised ML<br/>(Titanic EDA, Imputation & Decision Trees)"]:::supervised
+    P3["🎯 Pillar 3: Regularization & Shrinkage<br/>(Ridge L2, Lasso L1 Sparsity, ElasticNet)"]:::regular
+    P4["⚡ Pillar 4: Sequential Ensemble Boosting<br/>(Decision Stumps, AdaBoost, Gradient Boosting)"]:::ensemble
+    P5["🧪 Pillar 5: Model Evaluation & 5-Fold CV<br/>(Dummy Baseline, PR/ROC, Stratified K-Fold)"]:::cv
+    P6["🌐 Pillar 6: 3D Latent Customer Segmentation<br/>(Elbow Inertia, Silhouette Peak 0.5547, K=5, DBSCAN)"]:::clustering
+
+    P1 --> P2
+    P2 --> P3
+    P3 --> P4
+    P4 --> P5
+    P5 --> P6
+```
+
+---
+
+## 🌐 3D Interactive Manifold & Cluster Diagnostics
+
+Experience our unsupervised retail customer segmentation in full **3D interactive space** ($N=200$ consumers). By projecting customer attributes across three quantitative dimensions—`Age` ($X$), `Annual Income` ($Y$), and `Spending Score` ($Z$)—the natural clustering topology becomes immediately apparent.
+
+<p align="center">
+  <a href="https://htmlpreview.github.io/?https://github.com/vaibhav-jais06/ML-Fundamentals-and-Pipeline/blob/main/assets/interactive_3d_clusters.html">
+    <img src="./assets/customer_clusters_3d_preview.png" alt="3D Customer Segmentation Manifold" width="90%" style="border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" />
+  </a>
+</p>
+
+<div align="center">
+  <a href="https://htmlpreview.github.io/?https://github.com/vaibhav-jais06/ML-Fundamentals-and-Pipeline/blob/main/assets/interactive_3d_clusters.html"><b>👉 Click Here to Open Live 3D Interactive Canvas in Browser (Full 360° Rotation)</b></a><br>
+  <i>(Or open <a href="./assets/interactive_3d_clusters.html"><code>assets/interactive_3d_clusters.html</code></a> locally in Chrome/Firefox/Edge)</i>
+</div>
+
+<br>
+
+### 🎮 Interactive Controls & 3D Diagnostics Features:
+* **🔄 360° Free Space Rotation:** Click and drag anywhere on the canvas to rotate along Pitch, Yaw, and Roll to inspect cluster boundaries from any viewing angle.
+* **🔍 Dynamic Panning & Zoom:** Scroll to zoom directly into dense cluster intersections between *Young Trendsetters* and *High-Value VIPs*.
+* **🏷️ Real-Time Multi-Attribute Tooltips:** Hover over any 3D data point to inspect `CustomerID`, `Age`, `Gender`, `Annual Income ($k)`, `Spending Score (1-100)`, and assigned `Customer Persona`.
+* **👁️ Interactive Legend Isolation:** Click any persona in the legend to isolate that specific market segment or double-click to solo.
+
+### 📐 3D Mathematical Centroid Tensors:
+The cluster centroids represent the center-of-mass coordinates $\boldsymbol{\mu}_k \in \mathbb{R}^3$ in three-dimensional space:
+
+$$\boldsymbol{\mu}_k = \left( \frac{1}{|C_k|} \sum_{i \in C_k} \text{Age}_i, \quad \frac{1}{|C_k|} \sum_{i \in C_k} \text{Income}_i, \quad \frac{1}{|C_k|} \sum_{i \in C_k} \text{Spending}_i \right)$$
+
+| Cluster | Persona Title | 3D Centroid Coordinate $(\text{Age}, \text{Income}, \text{Spending})$ | Volume Share | Commercial Strategy |
+| :---: | :--- | :---: | :---: | :--- |
+| **0** | **Standard (Mainstream)** | **$(42.72\text{ yrs}, \; \$55.30\text{k}, \; 49.52/100)$** | **40.5%** | Baseline loyalty programs & recurring value bundles |
+| **1** | **VIP / High-Value Champions** | **$(32.69\text{ yrs}, \; \$86.54\text{k}, \; 82.13/100)$** | **19.5%** | White-glove concierge, luxury previews, VIP access |
+| **2** | **Young Trendsetters** | **$(25.27\text{ yrs}, \; \$25.73\text{k}, \; 79.36/100)$** | **11.0%** | Social commerce, influencer collabs, BNPL financing |
+| **3** | **Careful Savers** | **$(41.11\text{ yrs}, \; \$88.20\text{k}, \; 17.11/100)$** | **17.5%** | Premium durability warranties, high-yield rewards |
+| **4** | **Sensible Budget Shoppers** | **$(45.22\text{ yrs}, \; \$26.30\text{k}, \; 20.91/100)$** | **11.5%** | Price-slashing clearance, discount coupons, essentials |
 
 ---
 
@@ -36,49 +110,13 @@ Predicting outcomes, extracting latent structure, and optimizing decision bounda
 4. **Regularization & Shrinkage Methods:** Taming overfitting, suppressing multicollinearity, and driving automated feature selection via **L2 (Ridge)**, **L1 (Lasso)**, and hybrid **ElasticNet** penalties.
 5. **Ensemble Methods & Sequential Boosting:** Mastering weak learner theory, decision stumps, iterative sample re-weighting via **AdaBoost**, and pseudo-residual gradient optimization via **Gradient Boosting** with staged loss curves.
 6. **Model Evaluation & Validation Diagnostics:** Rigorous evaluation methodologies using the **Wisconsin Breast Cancer** diagnostic dataset, contrasting naive baselines (`DummyClassifier`) against standard pipelines (`StandardScaler` + `LogisticRegression`, `DecisionTreeClassifier`, `RandomForestClassifier`), confusion matrices, classification reports, and 5-Fold `StratifiedKFold` cross-validation.
-7. **Unsupervised Customer Segmentation & Density Clustering:** Full-lifecycle behavioral segmentation on the **Mall Customers** dataset, leveraging feature standardization, Elbow curve optimization (WCSS / Inertia), Silhouette score validation, 2D centroid mapping, **Plotly interactive exploration**, and density-based clustering via **DBSCAN**.
-
-```
-                           ┌───────────────────────────────────────────────┐
-                           │         Data Engineering Foundations          │
-                           │   (NumPy Vectorization & Pandas Wrangling)    │
-                           └───────────────────────┬───────────────────────┘
-                                                   │
-                                                   ▼
-                           ┌───────────────────────────────────────────────┐
-                           │          End-to-End Supervised ML             │
-                           │   (EDA, Imputation, Encoding, Decision Tree)  │
-                           └───────────────────────┬───────────────────────┘
-                                                   │
-         ┌─────────────────────────────────────────┼─────────────────────────────────────────┐
-         ▼                                         ▼                                         ▼
-┌─────────────────────────────────┐       ┌─────────────────────────────────┐       ┌─────────────────────────────────┐
-│     Supervised & Unsupervised   │       │    Regularization & Shrinkage   │       │   Ensemble Learning & Boosting  │
-│   (LogReg, Pruned Trees,        │       │   (Ridge L2, Lasso L1 Sparsity, │       │  (Decision Stumps, AdaBoost,    │
-│    Synthetic 2D Clustering)     │       │    ElasticNet Convex Hybrid)    │       │   Gradient Boosting, Staged)    │
-└────────────────┬────────────────┘       └────────────────┬────────────────┘       └────────────────┬────────────────┘
-                 │                                         │                                         │
-                 └─────────────────────────────────────────┼─────────────────────────────────────────┘
-                                                           │
-                                                           ▼
-                           ┌───────────────────────────────────────────────┐
-                           │       Model Evaluation & CV Diagnostics       │
-                           │    (Dummy Baseline, PR/ROC, Stratified K-Fold)│
-                           └───────────────────────┬───────────────────────┘
-                                                   │
-                                                   ▼
-                           ┌───────────────────────────────────────────────┐
-                           │     Unsupervised Customer Segmentation        │
-                           │  (StandardScaler, Elbow Inertia, Silhouette,  │
-                           │   K-Means K=5, DBSCAN Density, Plotly 3D/2D)  │
-                           └───────────────────────────────────────────────┘
-```
+7. **Unsupervised Customer Segmentation & Density Clustering:** Full-lifecycle behavioral segmentation on the **Mall Customers** dataset, leveraging feature standardization, Elbow curve optimization (WCSS / Inertia), Silhouette score validation, 2D centroid mapping, **Plotly 3D/2D interactive exploration**, and density-based clustering via **DBSCAN**.
 
 > **Formal Real-World Problem Formulations:**  
 > • **Titanic Survival Classification Task:** Predict binary passenger survival state: $y \in \{0, 1\}$ (0 = Deceased, 1 = Survived) from passenger socio-demographics, fare classes, and cabin records ([Kaggle Titanic Dataset](https://www.kaggle.com/c/titanic/data)).  
 > • **Wisconsin Diagnostic Oncology Task:** Classify cellular biopsy nuclei as benign ($1$) or malignant ($0$) across 30 morphological real-valued features ([Wisconsin Breast Cancer Dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html)).  
 > • **Controlled Sparsity & Shrinkage Task:** Predict continuous targets from 10 features (5 true informative signals, 5 Gaussian noise features) to benchmark mathematical coefficient shrinkage and $L_1$ variable selection.  
-> • **Mall Customer Behavioral Segmentation Task:** Partition $N=200$ retail consumers into actionable commercial personas based on Annual Income ($k\$$) and Spending Score ($1..100$) using unsupervised Euclidean & Density clustering ([Mall Customers Dataset](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python)).
+> • **Mall Customer Behavioral Segmentation Task:** Partition $N=200$ retail consumers into actionable commercial personas based on Annual Income ($k\$$) and Spending Score ($1..100$) using unsupervised Euclidean & Density clustering ([Mall Customers Dataset](./Mall_Customers.csv)).
 
 ---
 
@@ -94,7 +132,7 @@ Every notebook in this repository is completely self-contained, heavily document
 | 🎯 **[`Regularization.ipynb`](./Regularization.ipynb)** | **Regularization & Feature Selection** | • **OLS Baseline:** Unregularized regression benchmarking<br>• **Ridge ($L_2$):** Smooth coefficient shrinkage & collinearity control<br>• **Lasso ($L_1$):** Exact zero sparsity & automated feature elimination<br>• **ElasticNet:** Convex combination balancing sparsity & grouping<br>• Hyperparameter sensitivity sweeps ($\alpha$ & `l1_ratio`) | Synthetic Gauss-Markov Regression |
 | ⚡ **[`Boosting.ipynb`](./Boosting.ipynb)** | **Ensemble Learning & Boosting** | • **Weak Learners:** Single-split Decision Stumps (`max_depth=1`)<br>• **AdaBoost:** Iterative sample weight updating & adaptive voting<br>• **Gradient Boosting:** Pseudo-residuals & shrinkage learning rate<br>• Stage-wise accuracy tracking (`staged_score`)<br>• Feature importance extraction | Synthetic Classification Boundary |
 | 🧪 **[`Model_Evalution.ipynb`](./Model_Evalution.ipynb)** | **Evaluation & Cross-Validation** | • Baseline benchmarking (`DummyClassifier`)<br>• Precision, Recall, F1, Accuracy metric suite<br>• Leak-free `Pipeline` (`StandardScaler` + `LogisticRegression`)<br>• Multi-model comparison (LogReg, Tree, Random Forest)<br>• 5-Fold `StratifiedKFold` Cross-Validation | [Wisconsin Breast Cancer Dataset](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_breast_cancer.html) |
-| 🛍️ **[`KMeans_Cluster_Analysis.ipynb`](./KMeans_Cluster_Analysis.ipynb)** <br> *(also [`KMeans_Cluser_analysis.ipynb`](./KMeans_Cluser_analysis.ipynb))* | **Customer Segmentation & Unsupervised Diagnostics** | • Standard feature scaling (`StandardScaler`)<br>• **Elbow Method:** Inertia (WCSS) sweeps ($K=1..10$)<br>• **Silhouette Analysis:** Quantitative validation ($K=2..8$)<br>• **K-Means Model:** 5 customer personas & centroid mapping<br>• **DBSCAN:** Density-based clustering & noise detection<br>• **Plotly Express:** 2D interactive customer exploration | [Mall Customers Dataset](./Mall_Customers.csv) (200 records) |
+| 🛍️ **[`KMeans_Cluster_Analysis.ipynb`](./KMeans_Cluster_Analysis.ipynb)** <br> *(also [`KMeans_Cluser_analysis.ipynb`](./KMeans_Cluser_analysis.ipynb))* | **3D Customer Segmentation & Diagnostics** | • Standard feature scaling (`StandardScaler`)<br>• **Elbow Method:** Inertia (WCSS) sweeps ($K=1..10$)<br>• **Silhouette Analysis:** Quantitative validation ($K=2..8$)<br>• **K-Means Model:** 5 customer personas & centroid mapping<br>• **DBSCAN:** Density-based clustering & noise detection<br>• **Plotly Express 3D:** Interactive customer exploration | [Mall Customers Dataset](./Mall_Customers.csv) (200 records) |
 
 ---
 
@@ -103,8 +141,8 @@ Every notebook in this repository is completely self-contained, heavily document
 The **[`KMeans_Cluster_Analysis.ipynb`](./KMeans_Cluster_Analysis.ipynb)** notebook provides an end-to-end commercial case study in customer segmentation, evaluating how unsupervised algorithms uncover latent behavioral archetypes from real customer data.
 
 ```
-[Feature Standardization] ──► [Elbow & Silhouette Validation] ──► [K-Means (K=5)] ──► [DBSCAN & Plotly]
-  (Zero Mean, Unit Var)          (Inertia + Silhouette Peak)        (5 Clear Personas)     (Density vs Centroid)
+[Feature Standardization] ──► [Elbow & Silhouette Validation] ──► [K-Means (K=5)] ──► [3D Plotly & DBSCAN]
+  (Zero Mean, Unit Var)          (Inertia + Silhouette Peak)        (5 Clear Personas)     (360° Free Space Canvas)
 ```
 
 <details>
@@ -124,7 +162,7 @@ The **[`KMeans_Cluster_Analysis.ipynb`](./KMeans_Cluster_Analysis.ipynb)** noteb
 11. **Part 11: 2D Static Cluster Visualization with Centroids** — High-resolution Seaborn scatter plot with inverse-transformed centroid coordinates marked with prominent crosses.
 12. **Part 12: Quantitative Cluster Profiling** — Aggregating mean age, annual income, spending scores, and customer counts per cluster.
 13. **Part 13: Business Persona Profiling & Marketing Strategies** — Translating mathematical clusters into actionable retail personas (VIP Champions, Trendsetters, Savers, Budget Shoppers, Mainstream).
-14. **Part 14: Interactive Cluster Exploration (Plotly)** — Rich web-based scatter plot with multi-attribute hover tooltips (`CustomerID`, `Age`, `Gender`, `Segment`).
+14. **Part 14: Interactive 3D & 2D Cluster Exploration (Plotly)** — Rich web-based 3D scatter plot with multi-attribute hover tooltips (`CustomerID`, `Age`, `Gender`, `Segment`) and 360-degree rotation.
 15. **Part 15: Density-Based Clustering Comparison (DBSCAN)** — Benchmarking K-Means against `DBSCAN(eps=0.35, min_samples=5)` to identify arbitrary density formations and isolate outliers/noise.
 
 </details>
@@ -135,8 +173,8 @@ Unsupervised clustering relies on distance metrics in standardized Euclidean spa
 
 * **Within-Cluster Sum of Squares (Inertia / WCSS):**  
   Measures the internal coherence and compactness of clusters:
-  $$J = \sum_{k=1}^K \sum_{x_i \in C_k} \| x_i - \mu_k \|^2$$
-  where $\mu_k = \frac{1}{|C_k|} \sum_{x \in C_k} x$ is the centroid of cluster $C_k$.
+  $$J = \sum_{k=1}^K \sum_{x_i \in C_k} \| x_i - \boldsymbol{\mu}_k \|^2$$
+  where $\boldsymbol{\mu}_k = \frac{1}{|C_k|} \sum_{x \in C_k} x$ is the centroid of cluster $C_k$.
 
 * **Silhouette Coefficient:**  
   Quantifies how well an individual point $i$ is matched to its own cluster compared to neighboring clusters:
@@ -171,16 +209,6 @@ To objectively determine the optimal number of clusters, both Inertia (WCSS) and
 | **2** | **Young Trendsetters** | **22** | 11.0% | **25.3 yrs** | \$25.7k | **79.4 / 100** | **High Engagement, Budget-Constrained:** Young demographic driven by lifestyle and trends. Engage via social commerce, influencer campaigns, flash drops, and Buy-Now-Pay-Later (BNPL). |
 | **3** | **Careful Savers** | **35** | 17.5% | 41.1 yrs | **\$88.2k** | 17.1 / 100 | **Affluent but Conservative:** High income with minimal discretionary spending. Win over with quality guarantees, durability assurances, premium utility, and financial investment products. |
 | **4** | **Sensible Budget Shoppers** | **23** | 11.5% | 45.2 yrs | \$26.3k | 20.9 / 100 | **Price-Conscious:** Low income and low spending. Attract with clearance sales, discount coupons, budget essentials, and cashback rewards. |
-
-### K-Means vs. DBSCAN Comparison
-
-| Dimension | K-Means Clustering | DBSCAN (Density-Based) |
-| :--- | :--- | :--- |
-| **Cluster Shape Assumption** | Assumes convex, spherical clusters | Discovers arbitrary, irregular geometric shapes |
-| **Outlier & Noise Handling** | Forces every single point into a cluster (sensitive to outliers) | Naturally isolates anomalous points as noise ($y = -1$) |
-| **Hyperparameter Inputs** | Requires predefined number of clusters ($K$) | Requires neighborhood radius ($\varepsilon$) and $\text{MinPts}$ |
-| **Computational Complexity** | Highly scalable: $\mathcal{O}(N \cdot K \cdot I \cdot d)$ | $\mathcal{O}(N^2)$ without spatial indexing; $\mathcal{O}(N \log N)$ with KD-Tree |
-| **Result on Mall Dataset** | Produced 5 actionable, commercially balanced segments | Identified dense core and flagged 35 peripheral boundary outliers |
 
 ---
 
@@ -332,74 +360,36 @@ The **[`Boosting.ipynb`](./Boosting.ipynb)** notebook provides an in-depth maste
 
 ---
 
-## 🛠️ Pipeline Architecture
-
-Our machine learning pipeline follows an industry-standard modular lifecycle:
-
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                           1. INGESTION & DATA HYGIENE                       │
-│    • Schema verification, type coercion, null checks & deduplication        │
-└──────────────────────────────────────┬──────────────────────────────────────┘
-                                       │
-┌──────────────────────────────────────▼──────────────────────────────────────┐
-│                  2. EXPLORATORY DATA ANALYSIS (EDA)                         │
-│    • Univariate histograms & KDEs, bivariate correlations, demographic hue   │
-└──────────────────────────────────────┬──────────────────────────────────────┘
-                                       │
-┌──────────────────────────────────────▼──────────────────────────────────────┐
-│              3. PREPROCESSING & LEAK-FREE TRANSFORMATIONS                   │
-│    • Median/Mode imputation, One-Hot Encoding, StandardScaler in Pipeline   │
-└──────────────────────────────────────┬──────────────────────────────────────┘
-                                       │
-┌──────────────────────────────────────▼──────────────────────────────────────┐
-│                    4. MODEL TRAINING & COMPLEXITY CONTROL                   │
-│    • Supervised: LogReg, Trees, Random Forest, AdaBoost, Gradient Boosting  │
-│    • Regularization: Ridge (L2), Lasso (L1 Sparsity), ElasticNet            │
-│    • Unsupervised: KMeans (Elbow + Silhouette), DBSCAN Density Reachability │
-└──────────────────────────────────────┬──────────────────────────────────────┘
-                                       │
-┌──────────────────────────────────────▼──────────────────────────────────────┐
-│                    5. DIAGNOSTICS, VALIDATION & INSIGHTS                    │
-│    • Confusion Matrix, 5-Fold Stratified CV, Staged Loss, Customer Personas │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
----
-
 ## 💻 Code Sneak Peek
 
-### 1. Unsupervised Customer Clustering & Centroid Profiling
+### 1. 3D Customer Segmentation & Manifold Projection (Plotly Express)
 ```python
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
+import plotly.express as px
 
-# 1. Load and standardize retail customer features
+# 1. Load retail customer dataset
 df = pd.read_csv("Mall_Customers.csv")
 X = df[["Annual Income (k$)", "Spending Score (1-100)"]]
 scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
-# 2. Evaluate Silhouette Score across cluster candidates
-for k in range(2, 7):
-    km = KMeans(n_clusters=k, random_state=42, n_init=10).fit(X_scaled)
-    score = silhouette_score(X_scaled, km.labels_)
-    print(f"K = {k} | Silhouette Score: {score:.4f}")
-
-# 3. Fit optimal K-Means model (K=5)
+# 2. Fit optimal K-Means model (K=5)
 kmeans = KMeans(n_clusters=5, random_state=42, n_init=10)
 df["Cluster"] = kmeans.fit_predict(X_scaled)
 
-# 4. Extract segment averages for commercial profiling
-summary = df.groupby("Cluster").agg(
-    Customers=("CustomerID", "count"),
-    Avg_Age=("Age", "mean"),
-    Avg_Income=("Annual Income (k$)", "mean"),
-    Avg_Spending=("Spending Score (1-100)", "mean")
-).round(2)
-print(summary)
+# 3. Render 3D Interactive Manifold (360° Free Space Canvas)
+fig = px.scatter_3d(
+    df,
+    x="Age",
+    y="Annual Income (k$)",
+    z="Spending Score (1-100)",
+    color="Cluster",
+    hover_data=["CustomerID", "Age", "Gender"],
+    title="3D Customer Segmentation Manifold"
+)
+fig.show()
 ```
 
 ### 2. Regularization & Feature Selection (Ridge, Lasso, ElasticNet)
@@ -519,7 +509,7 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 Navigate to any of the notebooks to interact with the visualizations:
-* **Customer Segmentation:** [`KMeans_Cluster_Analysis.ipynb`](./KMeans_Cluster_Analysis.ipynb)
+* **3D Customer Segmentation:** [`KMeans_Cluster_Analysis.ipynb`](./KMeans_Cluster_Analysis.ipynb)
 * **Regularization & Shrinkage:** [`Regularization.ipynb`](./Regularization.ipynb)
 * **Model Evaluation & CV:** [`Model_Evalution.ipynb`](./Model_Evalution.ipynb)
 * **Ensemble Boosting:** [`Boosting.ipynb`](./Boosting.ipynb)
@@ -535,6 +525,10 @@ ML-Fundamentals-and-Pipeline/
 ├── requirements.txt                # Pinned production dependencies (scikit-learn, plotly, etc.)
 ├── README.md                       # Comprehensive documentation, curriculum & benchmarks
 ├── Mall_Customers.csv              # Benchmark dataset for customer segmentation (200 records)
+├── assets/                         # 3D Visual assets, interactive exports & SVG topologies
+│   ├── pipeline_3d_architecture.svg    # 3D Isometric multilayer pipeline SVG diagram
+│   ├── customer_clusters_3d_preview.png # High-resolution 3D customer manifold render
+│   └── interactive_3d_clusters.html    # Standalone 3D interactive Plotly Web Visualizer
 ├── Numpy_Pandas.ipynb              # Pillar 1: Tensor operations, broadcasting & DataFrame wrangling
 ├── ML_Pipeline.ipynb               # Pillar 2: Titanic survival classification end-to-end pipeline
 ├── Week_3_ML_I_Sunday_.ipynb       # Pillar 3: Supervised (Trees, LogReg) & Unsupervised 2D clustering
@@ -555,7 +549,7 @@ ML-Fundamentals-and-Pipeline/
 - [x] **Regularization & Shrinkage:** Ridge ($L_2$), Lasso ($L_1$ feature elimination), and ElasticNet with sensitivity sweeps.
 - [x] **Ensemble Boosting:** AdaBoost and Gradient Boosting with staged scoring and boundary visuals.
 - [x] **Model Evaluation & Diagnostics:** Stratified K-Fold CV, DummyClassifier baseline, and confusion matrix diagnostics.
-- [x] **Unsupervised Customer Segmentation:** Mall customer clustering, WCSS Elbow curve, Silhouette validation ($K=2..8$), persona profiling, and DBSCAN density comparison.
+- [x] **3D Unsupervised Customer Segmentation:** Mall customer clustering, WCSS Elbow curve, Silhouette validation ($K=2..8$), persona profiling, and 3D interactive Web Visualizer.
 - [ ] **Advanced Gradient Boosters:** Implement XGBoost, LightGBM, and CatBoost pipelines.
 - [ ] **Automated Hyperparameter Optimization:** Integrate Optuna, `GridSearchCV`, and Bayesian Optimization.
 - [ ] **Interactive Web Application:** Build a Streamlit / Gradio dashboard for real-time model inference and customer segment exploration.
